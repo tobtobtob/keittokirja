@@ -1,4 +1,7 @@
 Keittokirja::Application.routes.draw do
+  get "users/new"
+  get "users/create"
+  get "users/show"
   get "recipes/index"
   get "recipes/show"
   get "recipes/new"

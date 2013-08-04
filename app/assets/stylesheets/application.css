@@ -1,5 +1,5 @@
 #navbar {
-	width: 100%;
+	width: 99.5%;
 	list-style-type:none;
 	margin:0 0 3em 0;
 	padding:0;
@@ -24,9 +24,14 @@
 	width:70%;
 	background-color: #ccc;
 	opacity: 0.9;
+	height:100%;
+	border-radius: 5px;
+	text-align:center;
 }
 body {
 	background: url('chinesefood.jpg');
 	background-repeat:repeat;
 }
-
+.form {
+	padding: 15px;
+}
