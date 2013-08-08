@@ -8,10 +8,17 @@
 </head>
 <body>
 <div class="content">
+<div id="banner">
+	<h1>	Keittokirja </p>
+</div>
 <ul id="navbar">
-	<li> haku </li>
-	<li> linkkeja </li>
-	<li>	linkkeja </li>
+	<li> <%= link_to("haku", root_path) %> </li>
+	<% if current_user %>
+		<li> <%= link_to("kirjaudu ulos", sessions_destroy_path) %> </li>
+	<% else %>
+	<li> <%= link_to("kirjaudu sisään", sessions_new_path) %> </li>
+	<li> <%= link_to("luo tunnus", users_new_path) %> </li>
+	<% end %>
 </ul></br>
 <%= yield %>
 </div>

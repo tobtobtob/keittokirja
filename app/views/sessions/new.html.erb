@@ -1,0 +1,9 @@
+<h1> Kirjaudu sisään </h1>
+<div class="form"> <%= form_tag(sessions_path) do %>
+<%= label_tag(:nick, "nimimerkki") %> </br>
+<%= text_field_tag(:nick)%></br>
+<%= label_tag(:password, "salasana") %> </br>
+<%= password_field_tag(:password) %> </br>
+<%= submit_tag("kirjaudu sisään") %>
+<% end %>
+</div>

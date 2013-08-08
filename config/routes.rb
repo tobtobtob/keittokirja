@@ -1,4 +1,7 @@
 Keittokirja::Application.routes.draw do
+  get "sessions/new"
+  get "sessions/create"
+  get "sessions/destroy"
   get "users/new"
   get "users/create"
   get "users/show"
@@ -7,6 +10,12 @@ Keittokirja::Application.routes.draw do
   get "recipes/new"
   get "recipes/create"
   get "recipes/destroy"
+	
+	resources :users
+	resources :recipes
+	resources :sessions
+	root to: 'recipes#index'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
