@@ -12,7 +12,7 @@
 	<h1>	Keittokirja </p>
 </div>
 <ul id="navbar">
-	<li> <%= link_to("haku", root_path) %> </li>
+	<li> <%= link_to("etusivu", root_path) %> </li>
 	<% if current_user %>
 		<li> <%= link_to("kirjaudu ulos", sessions_destroy_path) %> </li>
 	<% else %>
@@ -20,6 +20,12 @@
 	<li> <%= link_to("luo tunnus", users_new_path) %> </li>
 	<% end %>
 </ul></br>
+<% if flash[:alert] %>
+	<p class="alert"> <%= flash.alert %> </p> </br>
+<% end %>
+<% if flash[:notice] %>
+	<p class="notice"> <%= flash.notice %> </p> </br>
+<% end %>
 <%= yield %>
 </div>
 </body>

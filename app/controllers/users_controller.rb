@@ -11,7 +11,8 @@ class UsersController < ApplicationController
 		if @user.save
 			redirect_to root_path, :notice => "Uusi tunnus luotu!"
 		else
-			render '/users/new'
+			flash.now.alert = "Virheellinen käyttäjätunnus tai salasana"
+			render 'users/new'
 		end
   end
 

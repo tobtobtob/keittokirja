@@ -20,6 +20,10 @@
 #navbar li a:hover {
 	background-color:white;
 }
+#navbar li a:visited {
+	color:black;
+}
+
 #banner {
 	height:100px;
 	width:99.5%;
@@ -57,4 +61,10 @@ body {
 }
 .form {
 	padding: 15px;
+}
+.alert {
+    color:red;
+}
+.notice{
+    color:green;
 }
