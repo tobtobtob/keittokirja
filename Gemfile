@@ -44,3 +44,5 @@ gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+gem 'rmagick'
+gem "cocaine", '=0.5'

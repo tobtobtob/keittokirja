@@ -1,2 +1,15 @@
-<h1>Recipes#new</h1>
-<p>Find me in app/views/recipes/new.html.erb</p>
+<h1>Lisää uusi resepti</h1>
+	<div class="form">
+		<%= form_tag(recipes_path,:multipart => true) do %>
+			<%= label_tag(:name, "Reseptin nimi") %> </br>
+			<%= text_field_tag(:name) %> </br>
+			<%= label_tag(:description, "Lyhyt kuvaus reseptistäsi") %> </br>
+			<%= text_area_tag(:description, nil, :size => "40x5") %> </br>
+			<%= label_tag(:ingredients, "Ainesosat (erottele rivinvaihdoin)") %> </br>
+			<%= text_area_tag(:ingredients, nil, :size => "40x20") %> </br>
+			<%= label_tag(:directions, "Valmistusohje") %>	</br>
+			<%= text_area_tag(:directions, nil, :size => "40x20") %> </br>
+			<%= file_field_tag(:photo) %> </br> 
+			<%= submit_tag("Lähetä") %> </br>
+		<% end %>
+	</div>

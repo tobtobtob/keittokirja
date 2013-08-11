@@ -15,6 +15,7 @@
 	<li> <%= link_to("etusivu", root_path) %> </li>
 	<% if current_user %>
 		<li> <%= link_to("kirjaudu ulos", sessions_destroy_path) %> </li>
+		<li> <%= link_to("luo uusi resepti", recipes_new_path) %> </li>
 	<% else %>
 	<li> <%= link_to("kirjaudu sisään", sessions_new_path) %> </li>
 	<li> <%= link_to("luo tunnus", users_new_path) %> </li>
