@@ -35,6 +35,7 @@ end
 # Use ActiveModel has_secure_password
 gem 'bcrypt-ruby', '~> 3.0.0', :require => 'bcrypt'
 
+gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
 # Use unicorn as the app server
 # gem 'unicorn'
 
