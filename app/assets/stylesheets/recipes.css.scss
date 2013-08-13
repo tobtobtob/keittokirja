@@ -1,3 +1,58 @@
-// Place all the styles related to the recipes controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.preview {
+	width:90%;
+	height:120px;
+	background-color:#f4ebeb;
+	margin:20px auto 0px;
+	border-radius:5px;
+	align:center;
+	a {text-decoration:none} 
+	position:relative;
+	
+}
+.small_image {
+	float:left;
+	//margin:auto 25px;
+	display:block;
+	horizontal-align:middle;
+	border:10px;
+}
+
+.preview_text {
+	width:auto;
+	text-align:center;
+}
+.footer {
+	//border-radius:5px;
+	//border-top: 2px solid #ccc;	
+	width:99.5%;
+	height:30px;
+	div {
+		text-align:center;
+		border-left: 2px solid #ccc;
+		float:right;
+		padding:5px;
+	
+	}
+	clear:both;
+	position:absolute;
+	bottom:0px;
+}
+.container {
+	width:60%;
+//	background-color:white;	
+	height:auto;
+	display:block;
+	float:right;
+	margin-top:auto;
+	margin-bottom:auto;
+}
+#left {
+	width:45%;
+	float:left;
+	display:inline;
+}
+#right {
+	width: 45%;
+	float:right;
+	display:inline;
+}

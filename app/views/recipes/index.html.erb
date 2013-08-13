@@ -1,2 +1,16 @@
-<h1>Recipes#index</h1>
-<p>tänne listataan kaikki reseptit.</p>
+<%= stylesheet_link_tag "recipes", media: "all", "data-turbolinks-track" => true %>
+<% @recipes.each do |recipe| %>
+	<div class="preview">
+		<div class="small_image">
+			<%= image_tag recipe.photo.url(:small) %>
+		</div>
+		<div class="preview_text">
+			<h2> <%= link_to(recipe.name, "recipes/"+recipe.id.to_s) %> </h2>
+			<p> <%= recipe.description %> </p>
+		</div>
+		<div class="footer">
+			<div class="creator">
+				Kirjoittanut: <%= find_user_by_recipe(recipe).nick %> </div>
+		</div>
+	</div>
+<% end %>
