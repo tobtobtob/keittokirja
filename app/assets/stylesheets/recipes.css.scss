@@ -11,9 +11,7 @@
 }
 .small_image {
 	float:left;
-	//margin:auto 25px;
 	display:block;
-	horizontal-align:middle;
 	border:10px;
 }
 
@@ -22,8 +20,6 @@
 	text-align:center;
 }
 .footer {
-	//border-radius:5px;
-	//border-top: 2px solid #ccc;	
 	width:99.5%;
 	height:30px;
 	div {
@@ -39,20 +35,33 @@
 }
 .container {
 	width:60%;
-//	background-color:white;	
 	height:auto;
 	display:block;
 	float:right;
 	margin-top:auto;
 	margin-bottom:auto;
 }
-#left {
+#textbox-container {
+	margin-left:auto;
+	margin-right:auto;
+	width:80%;
+	clear:top;
+}
+.textbox {
+	background-color:#f4ebeb;
+	border-radius:5px;
 	width:45%;
+	clear:top;
+	margin-top:20px;
+	}
+#left {
 	float:left;
-	display:inline;
+	margin-left:10px;
 }
 #right {
-	width: 45%;
-	float:right;
-	display:inline;
+	float:left;
+	margin-left:10px;
+}
+.special-footer {
+	clear:both;
 }

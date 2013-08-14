@@ -1,14 +1,17 @@
 <%= stylesheet_link_tag "recipes",media: "all", "data-turbolinks-track" => true %>
 <h1> <%= @recipe.name %> </h1>
+<p> kirjoittanut: <%= find_user_by_recipe(@recipe).nick %> </p>
 <%= image_tag @recipe.photo %>
-<div class="left"> 
+<div class="textbox" id="left">
 	<p>
 		<%= create_line_breaks(@recipe.ingredients) %>
 	</p>
 </div>
-<div id="right">
+<div class="textbox" id="right">
 	<p>
-		<%= @recipe.directions %>
+		<%= create_line_breaks( @recipe.directions) %>
 	</p>
 </div>
+<!-- näkymätön palkki sivun alareunassa, joka saa taustavärin jatkumaan elementtien loppuun asti. jostain syystä ei toiminut ilman tätä -->
+<div class="special-footer">  </div>
 
