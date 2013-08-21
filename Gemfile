@@ -4,7 +4,9 @@ source 'https://rubygems.org'
 gem 'rails', '4.0.0'
 
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+gem 'pg', :group => :production
+gem 'pg', :group => [:development, :production]
+
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
@@ -46,3 +48,5 @@ gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
 # gem 'debugger', group: [:development, :test]
 gem 'rmagick'
 gem "cocaine", '=0.5'
+gem 'rails_12factor', group: :production
+

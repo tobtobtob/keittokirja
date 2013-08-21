@@ -1,7 +1,7 @@
 <%= stylesheet_link_tag "recipes",media: "all", "data-turbolinks-track" => true %>
 <h1> <%= @recipe.name %> </h1>
 <p> kirjoittanut: <%= find_user_by_recipe(@recipe).nick %> </p>
-<%= image_tag @recipe.photo %>
+<%= image_tag @recipe.photo.url(:normal) %>
 <div class="textbox" id="left">
 	<p>
 		<%= create_line_breaks(@recipe.ingredients) %>
