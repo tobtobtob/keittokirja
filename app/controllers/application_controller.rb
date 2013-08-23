@@ -4,6 +4,7 @@ class ApplicationController < ActionController::Base
 	helper_method :current_user
 	helper_method :find_user_by_recipe
 	helper_method :create_line_breaks
+	helper_method :find_user_by_comment
   protect_from_forgery with: :exception
 	private
 	def current_user
@@ -15,5 +16,9 @@ class ApplicationController < ActionController::Base
 #apumetodi muuttaa parametrina annetun teksin rivinvaihdot html:n ymmärtämään muotoon.
 	def create_line_breaks(text)
 		text.gsub("\n","</br>" ).html_safe
+	end
+	
+	def find_user_by_comment(comment)
+		User.find(comment.user_id)
 	end
 end

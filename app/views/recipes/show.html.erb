@@ -14,4 +14,21 @@
 </div>
 <!-- näkymätön palkki sivun alareunassa, joka saa taustavärin jatkumaan elementtien loppuun asti. jostain syystä ei toiminut ilman tätä -->
 <div class="special-footer">  </div>
-
+<h2> Kommentit: </h2>
+<% @comments.each do |comment| %>
+	<div class="comment">
+		<p><%= comment.content %></p></br>
+		<p> kirjoittanut: <%= find_user_by_comment(comment).nick %> </p> 
+	</div>
+	<% end %>
+	<% if session[:user_id] %>
+<h1> Kirjoita kommentti </h1>
+	<div class="form">
+		<%= form_tag(comments_path) do %>
+			<%= label_tag(:comment, "Kommentti:") %> </br>
+			<%= text_area_tag(:comment) %> </br>
+			<%= hidden_field_tag :recipe_id, @recipe.id  %>
+			<%= submit_tag("Lähetä") %> </br>
+	<% end %>
+	</div>
+	<% end %>

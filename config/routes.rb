@@ -12,6 +12,7 @@ Keittokirja::Application.routes.draw do
   get "recipes/create"
   get "recipes/destroy"
 	
+	resources :comments
 	resources :users
 	resources :recipes
 	resources :sessions

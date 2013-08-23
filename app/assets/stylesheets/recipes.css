@@ -65,6 +65,21 @@
 	float:left;
 	margin-left:10px;
 }
+
+.comment {
+	margin-right:auto;
+	margin-left:auto;
+	min-height: 100px;
+	width:70%;
+	background-color: #f4ebeb;
+	border-radius: 5px;
+}
+.comment p {
+	text-decoration:none;
+}
+.writtenBy {
+	text-align:left;
+}
 .special-footer {
 	clear:both;
 }
