@@ -3,6 +3,8 @@ class UsersController < ApplicationController
 		@user = User.new
   end
 
+#Metodia kutsutaan kun kirjautumaton käyttäjä syöttää uuden käyttäjän tiedot
+#tiedot tallennetaan, jos kaikki vaaditut tiedot mukana, jakäyttäjä ohjataan etusivulle.
   def create
 		@user = User.new
 		@user.nick = params[:nick]
