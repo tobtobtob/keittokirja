@@ -7,7 +7,7 @@ class CommentsController < ApplicationController
 		if comment.save
 			redirect_to recipes_path(Recipe.find(comment.recipe_id)), :notice => "Kommentti tallennettu"
 		else
-			Flash.alert = "Kommentin tallennus epäonnistui"
+			flash.alert = "Kommentin tallennus epäonnistui"
 			redirect_to  recipes_path(Recipe.find(comment.recipe_id))
 		end
   end

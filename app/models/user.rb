@@ -1,4 +1,9 @@
 class User < ActiveRecord::Base
+
+	has_many :recipes
+	has_many :ratings
+	has_many :comments
+
 	attr_accessible :nick, :password, :password_confirmation, :user_info
 	
 	attr_accessor :password

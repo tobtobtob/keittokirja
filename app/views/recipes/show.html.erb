@@ -2,6 +2,22 @@
 <h1> <%= @recipe.name %> </h1>
 <p> kirjoittanut: <%= find_user_by_recipe(@recipe).nick %> </p>
 <%= image_tag @recipe.photo.url(:normal) %>
+<% if current_user %>
+<%= form_tag(ratings_path)  do %>
+	<%= label_tag(:rating_1, "1") %>
+	<%= radio_button_tag(:rating, "1") %>
+	<%= label_tag(:rating_2, "2") %>
+	<%= radio_button_tag(:rating, "2") %>
+	<%= label_tag(:rating_3, "3") %>
+	<%= radio_button_tag(:rating, "3") %>
+	<%= label_tag(:rating_4, "4") %>
+	<%= radio_button_tag(:rating, "4") %>
+	<%= label_tag(:rating_5, "5") %>
+	<%= radio_button_tag(:rating, "5") %>
+	<%= submit_tag("tallenna arvio") %>
+	<%= hidden_field_tag(:recipe_id, @recipe.id) %>
+	<% end %>
+<% end %>
 <div class="textbox" id="left">
 	<p>
 		<%= create_line_breaks(@recipe.ingredients) %>

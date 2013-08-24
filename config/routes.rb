@@ -1,4 +1,5 @@
 Keittokirja::Application.routes.draw do
+  get "ratings/create"
   get "comments/create"
   get "sessions/new"
   get "sessions/create"
@@ -16,6 +17,7 @@ Keittokirja::Application.routes.draw do
 	resources :users
 	resources :recipes
 	resources :sessions
+	resources :ratings
 	root to: 'recipes#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
