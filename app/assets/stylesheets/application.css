@@ -23,6 +23,9 @@
 #navbar li a:visited {
 	color:black;
 }
+#navbar li form {
+	float:right;
+}
 
 #banner {
 	height:100px;

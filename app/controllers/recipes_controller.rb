@@ -1,8 +1,10 @@
 class RecipesController < ApplicationController
 
-#metodi ohjaa näkymään kaikki tallennetut reseptit.
+#metodi toimii sekä etusivuna, joka näyttää kaikki reseptit, että toteuttaa hakutoiminnallisuuden.
+#jos parametrinä ei ole annettu hakusanoja, annetaan näkymään kaikki reseptit, jos on, annetaan
+#vain kyseisen hakusanan sisältävät reseptit 
   def index
-		@recipes = Recipe.all
+		@recipes = Recipe.search(params[:search])
   end
 
 #Näytettävästä reseptistä ohjataan näkymään itse resepti sekä siihen 
@@ -32,6 +34,7 @@ class RecipesController < ApplicationController
 			render 'new'
 		end
   end
+		
 
   def destroy
   end

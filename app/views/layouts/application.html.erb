@@ -12,6 +12,11 @@
 	<h1>	Keittokirja </p>
 </div>
 <ul id="navbar">
+	<li> <%= form_tag(recipes_path,:method => :get) do %>
+		<%= text_field_tag(:search) %>
+		<%= submit_tag("hae reseptiä") %>
+		<% end %>
+	</li>
 	<li> <%= link_to("etusivu", root_path) %> </li>
 	<% if current_user %>
 		<li> <%= link_to("kirjaudu ulos", sessions_destroy_path) %> </li>

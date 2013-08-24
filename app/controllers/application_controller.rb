@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
 	helper_method :find_user_by_recipe
 	helper_method :create_line_breaks
 	helper_method :find_user_by_comment
-
+	helper_method :number_of_comments
   protect_from_forgery with: :exception
 
 	private
@@ -28,5 +28,11 @@ class ApplicationController < ActionController::Base
 #tämä apumetodi palauttaa käyttäjän, joka on kirjoittanut annetun kommentin	
 	def find_user_by_comment(comment)
 		User.find(comment.user_id)
+	end
+
+#apumetodi palauttaa parametrina annettuun reseptiin liittyvien 
+#kommenttien määrän.
+	def number_of_comments(recipe)
+		recipe.comments.size
 	end
 end
