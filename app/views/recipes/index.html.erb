@@ -12,6 +12,7 @@
 			<div class="creator">
 				Kirjoittanut: <%= find_user_by_recipe(recipe).nick %> </div>
 			<div> <%= number_of_comments(recipe) %> kommenttia </div>
+			<div> Käyttäjien arvio: <%= calculate_rating(recipe) %>/5 </div>
 		</div>
 	</div>
 <% end %>

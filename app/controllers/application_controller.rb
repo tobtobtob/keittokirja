@@ -5,6 +5,7 @@ class ApplicationController < ActionController::Base
 	helper_method :create_line_breaks
 	helper_method :find_user_by_comment
 	helper_method :number_of_comments
+	helper_method :calculate_rating
   protect_from_forgery with: :exception
 
 	private
@@ -34,5 +35,16 @@ class ApplicationController < ActionController::Base
 #kommenttien määrän.
 	def number_of_comments(recipe)
 		recipe.comments.size
+	end
+
+#apumetodi ottaa parametrinä reseptin ja palauttaa laskemansa keskiarvon reseptille
+#annetuista arvioista.
+	def calculate_rating(recipe)
+		ratings = recipe.ratings
+		ka = 0;
+		ratings.each do |rating|
+			ka += rating.rating
+		end
+		(ka/ratings.size.to_f)
 	end
 end
