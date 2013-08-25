@@ -41,6 +41,9 @@ class ApplicationController < ActionController::Base
 #annetuista arvioista.
 	def calculate_rating(recipe)
 		ratings = recipe.ratings
+		if ratings.size == 0
+			return "-"
+		end
 		ka = 0;
 		ratings.each do |rating|
 			ka += rating.rating
