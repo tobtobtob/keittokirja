@@ -39,7 +39,11 @@
 <% @comments.each do |comment| %>
 	<div class="comment">
 		<p><%= comment.content %></p></br>
-		<p> kirjoittanut: <%= find_user_by_comment(comment).nick %> </p> 
+		<p> kirjoittanut: <%= find_user_by_comment(comment).nick %>
+		<% if owner_of_comment(comment) %>
+		<%= link_to "Poista kommentti", comment_path(comment.id), method: 'delete' %> </p> 
+		<% end %>
+
 	</div>
 	<% end %>
 	<% if session[:user_id] %>

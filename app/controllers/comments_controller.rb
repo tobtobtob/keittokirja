@@ -11,4 +11,13 @@ class CommentsController < ApplicationController
 			redirect_to  recipes_path(Recipe.find(comment.recipe_id))
 		end
   end
+	def destroy
+		comment = Comment.find(params[:id])
+		if !owner_of_comment(comment)
+			redirect_to root_path
+			return
+		end
+		comment.delete
+		redirect_to root_path
+	end
 end
