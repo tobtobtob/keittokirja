@@ -6,6 +6,9 @@ class ApplicationController < ActionController::Base
 	helper_method :find_user_by_comment
 	helper_method :number_of_comments
 	helper_method :calculate_rating
+	helper_method :owner_of_recipe
+	helper_method :owner_of_comment
+
   protect_from_forgery with: :exception
 
 	private
@@ -49,5 +52,20 @@ class ApplicationController < ActionController::Base
 			ka += rating.rating
 		end
 		(ka/ratings.size.to_f)
+	end
+#apumetodi, joka selvittää onko parhaillaan kirjautunut käyttäjä parametrina
+#annetun reseptin kirjoittaja
+	def owner_of_recipe(recipe)
+		return false if !current_user
+		return true if current_user.id == recipe.user_id
+		false
+	end
+	
+#metodi selvittää, onko kirjautunut käyttäjä
+#parametrina annetun kommentin omistaja
+	def owner_of_comment(comment)
+		return false if !current_user
+		return true if current_user.id == comment.user_id
+		false
 	end
 end

@@ -1,6 +1,11 @@
 <%= stylesheet_link_tag "recipes",media: "all", "data-turbolinks-track" => true %>
 <h1> <%= @recipe.name %> </h1>
-<p> kirjoittanut: <%= find_user_by_recipe(@recipe).nick %> </p>
+<p> kirjoittanut: <%= find_user_by_recipe(@recipe).nick %>
+<% if owner_of_recipe(@recipe) %>
+	<%= link_to "Muokkaa reseptiä", edit_recipe_path(@recipe.id)  %>
+	<%= link_to "Poista resepti", recipe_path(@recipe.id), method: 'delete' %>
+<% end %>
+	 </p>
 <%= image_tag @recipe.photo.url(:normal) %>
 <% if current_user %>
 <%= form_tag(ratings_path)  do %>
