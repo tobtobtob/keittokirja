@@ -5,19 +5,20 @@ class CommentsController < ApplicationController
 		comment.user_id = session[:user_id]
 		comment.content = params[:comment]
 		if comment.save
-			redirect_to recipes_path(Recipe.find(comment.recipe_id)), :notice => "Kommentti tallennettu"
+			redirect_to recipe_path(Recipe.find(comment.recipe_id).id), :notice => "Kommentti tallennettu"
 		else
 			flash.alert = "Kommentin tallennus epäonnistui"
-			redirect_to  recipes_path(Recipe.find(comment.recipe_id))
+			redirect_to  recipe_path(Recipe.find(comment.recipe_id).id)
 		end
   end
+
 	def destroy
 		comment = Comment.find(params[:id])
 		if !owner_of_comment(comment)
-			redirect_to root_path
+			redirect_to recipe_path(Recipe.find(comment.recipe_id).id) 
 			return
 		end
 		comment.delete
-		redirect_to root_path
+		redirect_to recipe_path(Recipe.find(comment.recipe_id).id) 
 	end
 end

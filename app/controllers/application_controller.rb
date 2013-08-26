@@ -51,11 +51,12 @@ class ApplicationController < ActionController::Base
 		ratings.each do |rating|
 			ka += rating.rating
 		end
-		(ka/ratings.size.to_f)
+		return (ka/ratings.size.to_f).round(1)
 	end
 #apumetodi, joka selvittää onko parhaillaan kirjautunut käyttäjä parametrina
 #annetun reseptin kirjoittaja
 	def owner_of_recipe(recipe)
+		return true if current_user.admin
 		return false if !current_user
 		return true if current_user.id == recipe.user_id
 		false
@@ -64,6 +65,7 @@ class ApplicationController < ActionController::Base
 #metodi selvittää, onko kirjautunut käyttäjä
 #parametrina annetun kommentin omistaja
 	def owner_of_comment(comment)
+		return true if current_user.admin
 		return false if !current_user
 		return true if current_user.id == comment.user_id
 		false

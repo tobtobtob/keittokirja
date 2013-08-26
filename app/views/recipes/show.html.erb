@@ -36,6 +36,9 @@
 <!-- näkymätön palkki sivun alareunassa, joka saa taustavärin jatkumaan elementtien loppuun asti. jostain syystä ei toiminut ilman tätä -->
 <div class="special-footer">  </div>
 <h2> Kommentit: </h2>
+<% if @comments.size == 0 %>
+	<p> ei kommentteja </p>
+<% end %> 
 <% @comments.each do |comment| %>
 	<div class="comment">
 		<p><%= comment.content %></p></br>

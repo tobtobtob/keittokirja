@@ -1,6 +1,6 @@
 class RatingsController < ApplicationController
 
-#apumetodi muodostaa parametreista uudeen arvion, ja tallentaa sen tietokantaan.
+#metodi muodostaa parametreista uudeen arvion, ja tallentaa sen tietokantaan.
 #jos tallennus onnistuu, mahdollinen edellinen käyttäjän samasta reseptistä tekemä arvio poistetaan,
 #jotta yksi henkilö voi arvioida tietyn reseptin vain kerran, mutta
 #arviotaan pystyy muuttamaan jälkeenpäin.
@@ -15,10 +15,10 @@ class RatingsController < ApplicationController
 			if old_rating
 				old_rating.delete
 			end
-			redirect_to recipes_path(Recipe.find(params[:recipe_id])),:notice => "arvio tallennettu"
+			redirect_to recipe_path(Recipe.find(params[:recipe_id]).id),:notice => "arvio tallennettu"
 		else
 			flash.alert = "Arvion tallennus epäonnistui"
-			redirect_to recipes_path(Recipe.find(params[:recipe_id]))
+			redirect_to recipe_path(Recipe.find(params[:recipe_id]).id)
   	end
 	end
 end
