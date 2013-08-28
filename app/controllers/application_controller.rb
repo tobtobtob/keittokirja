@@ -56,8 +56,8 @@ class ApplicationController < ActionController::Base
 #apumetodi, joka selvittää onko parhaillaan kirjautunut käyttäjä parametrina
 #annetun reseptin kirjoittaja
 	def owner_of_recipe(recipe)
-		return true if current_user.admin
 		return false if !current_user
+		return true if current_user.admin
 		return true if current_user.id == recipe.user_id
 		false
 	end
@@ -65,8 +65,8 @@ class ApplicationController < ActionController::Base
 #metodi selvittää, onko kirjautunut käyttäjä
 #parametrina annetun kommentin omistaja
 	def owner_of_comment(comment)
-		return true if current_user.admin
 		return false if !current_user
+		return true if current_user.admin
 		return true if current_user.id == comment.user_id
 		false
 	end
